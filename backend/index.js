@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const helmet = require('helmet')
 
 //routes
 const DestinationsRouter = require("./routes/destinations");
@@ -42,3 +43,4 @@ app.use("/travelVehicle", travelVehicleRouter);
 app.use(guideRoute);
 app.use(AccomdationRouter);
 app.use(RoomsRouter);
+app.use(helmet())
